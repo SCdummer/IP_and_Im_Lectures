@@ -96,7 +96,7 @@ We now have the following results
 
 Given a bounded linear operator $K$ and $f \in \mathcal{F}$, a solution $\widetilde{u}$ to {eq}`minres`
 
-* only exists if $f \in \mathcal{R}(K) \oplus \mathcal{R}(K)^\perp$
+* exists if and only if $f \in \mathcal{R}(K) \oplus \mathcal{R}(K)^\perp$
 * obeys the *normal equations* $K^*\! K\widetilde{u} = K^*\! f.$
 
 The unique solution $\widetilde{u} \in \mathcal{N}(K)^{\perp}$ to the normal equations is called the *minimum-norm* solution.
