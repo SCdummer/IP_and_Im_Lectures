@@ -96,10 +96,13 @@ We now have the following results
 
 Given a bounded linear operator $K$ and $f \in \mathcal{F}$, a solution $\widetilde{u}$ to {eq}`minres`
 
-* only exists if $f \in \mathcal{R}(K) \oplus \mathcal{R}(K)^\perp$
+* exists if and only if $f \in \mathcal{R}(K) \oplus \mathcal{R}(K)^\perp$
 * obeys the *normal equations* $K^*\! K\widetilde{u} = K^*\! f.$
 
 The unique solution $\widetilde{u} \in \mathcal{N}(K)^{\perp}$ to the normal equations is called the *minimum-norm* solution.
+
+Due to the following fact, we have that this unique solution to the normal equations is also the unique *minimum-norm* solution to {eq}`minres`:
+ * solutions to the normal equation solve the minimum-residual problem {eq}`minres`
 
 ```
 
@@ -116,6 +119,7 @@ Next, we show that the normal equations only allow a solution when $f \in \mathc
 
 Finally, we show that the minimum-norm solution is unique. Denote the minimun-norm solution by $\widetilde{u}$. Now suppose we have another solution, $\widetilde{v}$, to {eq}`minres`. Since they both solve the normal equations we have $\widetilde{v} = \widetilde{u} + z$ with $z \in \mathcal{N}(K)$. It follows that $\|\widetilde{v}\|_{\mathcal{U}}^2 = \|\widetilde{u}\|_{\mathcal{U}}^2 + 2\langle \widetilde{u}, z \rangle_{\mathcal{U}} + \|z\|_{\mathcal{U}}^2$. Since $\widetilde{u} \in \mathcal{N}(K)^\perp$ we have  $\langle \widetilde{u}, z \rangle_{\mathcal{U}} = 0$ and hence $\|\widetilde{v}\|_{\mathcal{U}} \geq \|\widetilde{u}\|_{\mathcal{U}}$ with equality only obtained when $z = 0$.
 
+* As last statement, we prove that every solution to the normal equations also solves {eq}`minres`. Take a solution $\widetilde{u}$ to the normal equations and take an arbitrary $\widetilde{v} = \widetilde{u} + (\widetilde{v} - \widetilde{u}) = \widetilde{u} + \delta$. Then $\|K\widetilde{v} - F\|_{\mathcal{F}}^2 = \|K\widetilde{u} - f\|_{\mathcal{F}}^2 - 2\langle K \delta, K\widetilde{u} - f \rangle_{\mathcal{F}} + \|K \delta\|_{\mathcal{F}}^2 = \|K\widetilde{u} - f\|_{\mathcal{F}}^2 - 2\langle \delta, K^*\! K\widetilde{u} - K^*\!f \rangle_{\mathcal{F}} + \|K \delta\|_{\mathcal{F}}^2 = \|K\widetilde{u} - f\|_{\mathcal{F}}^2 + \|K \delta\|_{\mathcal{F}}^2$ where the last equality follows from the fact that $\widetilde{u}$ solves the normal equations. As $\|K \delta\|_{\mathcal{F}}^2 \geq 0$, we get $\|K\widetilde{v} - F\|_{\mathcal{F}}^2 \geq \|K\widetilde{u} - f\|_{\mathcal{F}}^2$ for all $\widetilde{v} \in \mathcal{U}$. Hence, $\widetilde{u}$ solves {eq}`minres`.
 ```
 
 ---
