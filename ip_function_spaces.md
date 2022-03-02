@@ -517,7 +517,7 @@ $$
 K^\dagger K u - u + \delta K^{\dagger}\sin(\delta^{-1}\cdot).
 $$
 
-Because $\delta^{-1} = \sigma_k$ and $\sin(\sigma_k^{-1}x)$ is a singular vector of $K$, this simplifies to
+Because $\delta = \sigma_k$ and $\sin(\sigma_k^{-1}x)$ is a singular vector of $K$, this simplifies to
 
 $$
 \sin(\sigma_k^{-1}x).
@@ -733,7 +733,7 @@ with $\|K^\dagger_{\alpha(\delta)}\| = \sup_k |g_{\alpha(\delta)}(\sigma_k)|$. T
 
 $$\sum_{k=0}^{\infty} \frac{|\langle f,u_k\rangle|^2}{\sigma_k^{2 + 4\mu}}$$
 
-and substitute $f = K(K^*K)^{\mu} w = \sum_{k=0}^\infty \sigma_k^{2\mu+1}\langle w,u_k\rangle u_k$ to get
+and substitute $f = K(K^*K)^{\mu} w = \sum_{k=0}^\infty \sigma_k^{2\mu+1}\langle w,v_k\rangle u_k$ to get
 
 $$\sum_{k=0}^{\infty} \sigma_k^{2 + 4\mu}\frac{|\langle w,u_k\rangle|^2}{\sigma_k^{2 + 4\mu}} = \|w\| < \infty.$$
 
