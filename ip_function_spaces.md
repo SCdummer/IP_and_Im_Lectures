@@ -506,6 +506,12 @@ Alternatively, we may express the error in terms of the minimum-norm solution $u
 
 $$\|K_{\alpha}^\dagger f^\delta - K^\dagger f\|_{\mathcal{U}} \leq \|I - K_{\alpha}^\dagger K\| \|u\|_{\mathcal{U}} +  \delta \|K_{\alpha}^\dagger\|.$$
 
+```{admonition} Answer
+:class: hint, dropdown
+
+To prove the above inequality, we use $$\|K_{\alpha}^\dagger f^\delta - K^\dagger f\|_{\mathcal{U}} \leq \|K_{\alpha}^\dagger - K^\dagger\| \|f\|_{\mathcal{F}} + \delta \|K_{\alpha}^\dagger\|.$$. Here we use $u = K^{\dagger}f$ to replace $K^{\dagger}f$ by $u$. If we are able to show $K_{\alpha}^\dagger f = K_{\alpha}^\dagger K u = K_{\alpha}^\dagger K K^\dagger f$ (here the last step follows by definition of $u$), we are done by one use of the definition of the operator norm. Hence, we need to prove  $K_{\alpha}^\dagger f = K_{\alpha}^\dagger K K^\dagger f$. We know $KK^\dagger = \left.P_{\overline{\mathcal{R}(K)}}\right|_{\mathcal{D}(K^\dagger)}.$ Hence, we have $K K^\dagger f =  \left.P_{\overline{\mathcal{R}(K)}}\right|_{\mathcal{D}(K^\dagger)} f$. Now we only need to prove $K_{\alpha}^\dagger f = K_{\alpha}^\dagger \left.P_{\overline{\mathcal{R}(K)}}\right|_{\mathcal{D}(K^\dagger)} f$. The reason this is true is that $K_{\alpha}^\dagger f = K_{\alpha}^\dagger\left.P_{\overline{\mathcal{R}(K)}}\right|_{\mathcal{D}(K^\dagger)} f + K_{\alpha}^\dagger\left.P_{\overline{\mathcal{R}(K)^\perp}}\right|_{\mathcal{D}(K^\dagger)} f$ and $K_{\alpha}^\dagger\left.P_{\overline{\mathcal{R}(K)^\perp}}\right|_{\mathcal{D}(K^\dagger)} f = 0$. To see this, take the (regularized-)pseudo inverse and a $f^\perp \in \mathcal{R}(K)^\perp$ and note that $\langle f^\perp, u_k \rangle = \langle f^\perp, \frac{1}{\sigma_k}Kv_k \rangle = 0$ as $f^\perp \in \mathcal{R}(K)^\perp$.
+```
+
 Such upper bounds may be useful to study asymptotic properties of the problem but may be too loose to be used in practice. In that case a more detailed analysis incorporating the type of noise and the class of images $u$ that we are interested in is needed.
 
 ```{admonition} Example: Differentiation
