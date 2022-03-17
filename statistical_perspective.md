@@ -661,10 +661,10 @@ $$
 * Assuming that both $\|f^{\delta} - \overline f\|_2$ and $\|u-\overline u\|_2$ are small, show that the log-likelihood function may be approximated as
 
 $$
-\sum_i \left(({K}u)_i - f_i^\delta\ln ({K}u)_i\right) \approx \|Ku - f^{\delta}\|_{\Sigma^{-1}}^2,
+\sum_i \left(({K}u)_i - f_i^\delta\ln ({K}u)_i\right) \approx C +\|Ku - f^{\delta}\|_{\Sigma^{-1}}^2,
 $$
 
-where $\Sigma$ is a diagonal matrix with elements $1/\overline f_i$.
+where $\Sigma$ is a diagonal matrix with elements $2f_i^\delta$ and $C$ is some constant depending only $f_i^\delta$.
 
 * In practice, we would replace $\overline f_i$ by $f_i^{\delta}$ for the covariance and thus approximate the Poisson map estimate as a weighted least-squares MAP estimate. Explain why this quadratic approximation makes sense heuristically.
 
