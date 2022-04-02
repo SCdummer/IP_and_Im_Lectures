@@ -246,9 +246,9 @@ Let $J$ have at least one minimiser and be [strictly convex](https://en.wikipedi
 
 Let $u_1, u_2$ be two distinct minimisers; i.e. $J(u_i) \leq J(u) \forall u \in \mathcal{U}$. In particular, we have $J(u_1) \leq J(\alpha u_1 + \beta u_2)$ with $\alpha + \beta = 1$. Because $J$ is strictly convex
 
-$$J(\alpha u_1 + \beta u_2) < \alpha J(u_1) + \beta J(u_2),$$
+$$J(\alpha u_1 + \beta u_2) < \alpha J(u_1) + \beta J(u_2) = J(u_1) = J(u_2),$$
 
-which would lead to a contradiction: $J(u_1) < J(u_1)$.
+As $\alpha u_1 + \beta u_2 \neq u_i$, this is in contradiction with $J(u_i) \leq J(u) \forall u \in \mathcal{U}$.
 ```
 
 ### Well-posedness of regularised least-squares problems
