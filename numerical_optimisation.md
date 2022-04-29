@@ -946,14 +946,14 @@ In terms of the optimal solution this is equivalent to
 
 $$\min_{\nu} \textstyle{\frac{1}{2}}\|\nu - \lambda f\|_2^2 \quad \text{s.t.} \quad \|\nu\|_{\infty} \leq 1.$$
 
-* From $\min u \textstyle{\frac{1}{2}}\|u - f^\delta\|_2^2 + \langle \nu,u\rangle$ we get $-\textstyle{\frac{1}{2}}\|\nu\|_2^2 + \langle \nu,f^\delta\rangle$. From $\min_{v} \lambda \|v\|_p - \langle \nu,v\rangle$ we get the constraint $\|\nu\|_{q}\leq 1$ with $p^{-1} + q^{-1} = 1$. This yields
+* From $\min u \textstyle{\frac{1}{2}}\|u - f^\delta\|_2^2 + \langle \nu,u\rangle$ we get $-\textstyle{\frac{1}{2}}\|\nu\|_2^2 + \langle \nu,f^\delta\rangle$. From $\min_{v} \lambda \|v\|_p - \langle \nu,v\rangle$ we get the constraint $\|\nu\|_{q}\leq \lambda$ with $p^{-1} + q^{-1} = 1$. This yields
 
-$$\max_{\nu} -\textstyle{\frac{1}{2}}\|\nu\|_2^2 + \langle \nu,f^\delta\rangle \quad \text{s.t.} \quad \|\nu\|_q \leq 1,$$
+$$\max_{\nu} -\textstyle{\frac{1}{2}}\|\nu\|_2^2 + \langle \nu,f^\delta\rangle \quad \text{s.t.} \quad \|\nu\|_q \leq \lambda,$$
 
  which in terms of the optimal solution is equivalent to
 
 
- $$\min_{\nu} \textstyle{\frac{1}{2}}\|\nu - f^\delta\|_2^2 \quad \text{s.t.} \quad \|\nu\|_q \leq 1.$$
+ $$\min_{\nu} \textstyle{\frac{1}{2}}\|\nu - f^\delta\|_2^2 \quad \text{s.t.} \quad \|\nu\|_q \leq \lambda.$$
 
  * The saddle-point problem is
 
