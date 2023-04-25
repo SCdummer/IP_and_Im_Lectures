@@ -150,7 +150,7 @@ $$
 m_{xy} = \frac{T_2\gamma b_y}{T_1T_2 (\gamma b_y)^2+1} \rho.
 $$ 
 
-A plot of $m_{xy}(t)$ for different values of the magnetic field component
+A plot of $m_{xy}$ for different values of the magnetic field component
 $b_y$ is shown in {numref}`steady`. Note that not only the absolute amplitude of each
 signal changes, but, more importantly, also the *relative* amplitude
 (contrast) changes; for instance, for $\gamma b_y=3$, tissue C gives
@@ -212,7 +212,7 @@ Four different in-vivo contrast images acquired for the same slice of the same b
 
 ## Imaging
 
-In the previous paragraph we have investigate the behavior of an
+In the previous paragraph we have investigated the behavior of an
 individual tissue type. In this section we will see how data from a
 whole object (human body) is acquired and processed into an image.\
 Look again at {numref}`transient`. Once the steady-state condition is reached (in
