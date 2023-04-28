@@ -17,7 +17,7 @@ In this chapter we treat numerical algorithms for solving optimisation problems 
 
 ## Smooth optimisation
 
-For smooth problems, we assume to have access to as many derivatives of $J$ as we need. As before, we denote the first derivative (or gradient) by $J' : \mathbb{R}^n \rightarrow \mathbb{R}^n$. We denote the second derivative (or Hessian) by $J'' : \mathbb{R}^n \rightarrow \mathbb{R}^{n\times n}$. We will additionally assume that the Hessian is globally bounded, i.e. there exists a constant $L < \infty$ such that $J''(u) \preceq L\cdot I$ for all $u\in\mathbb{R}^n$. Note that this implies that $J'$ is Lipschitz continous with constant $L$: $\|J'(u) - J'(v)\|_2 \leq L \|u - v\|_2$.
+For smooth problems, we assume to have access to as many derivatives of $J$ as we need. As before, we denote the first derivative (or gradient) by $J' : \mathbb{R}^n \rightarrow \mathbb{R}^n$. We denote the second derivative (or Hessian) by $J'' : \mathbb{R}^n \rightarrow \mathbb{R}^{n\times n}$. We will additionally assume that the Hessian is globally bounded, i.e. there exists a constant $L < \infty$ such that $J''(u) \preceq L\cdot I$ for all $u\in\mathbb{R}^n$ with $A \preceq B$ meaning that $A - B$ is negative definite. Note that this implies that $J'$ is Lipschitz continous with constant $L$: $\|J'(u) - J'(v)\|_2 \leq L \|u - v\|_2$.
 
 For a comprehensive treatment of this topic (and many more), we recommend the seminal book *Numerical Optimization* by Stephen Wright and Jorge Nocedal {cite}`nocedal2006numerical`.
 
@@ -46,7 +46,7 @@ where $\lambda > 0$ is the stepsize. The following theorem states that this iter
 ````{admonition} Theorem: *Global convergence of steepest descent*
 :class: important
 
-Let $J:\mathbb{R}^n\rightarrow \mathbb{R}$ be a smooth, Lipschitz-continuos functional. The fixed point iteration
+Let $J:\mathbb{R}^n\rightarrow \mathbb{R}$ be a smooth functional that satisfies the assumptions made at the start of this section. The fixed point iteration
 
 ```{math}
 :label: steepest_descent
@@ -698,7 +698,7 @@ with $\eta^{(k)} = t u^{(k)} + (1-t)u^*$ for some $t \in [0,1]$. We then get
 $$\|u^{(k+1)} - u^*\|_2 \leq \|I - \alpha J''(\eta^{(k)})\|_2 \|u^{(k)} - u^*\|_2.$$
 
 For linear convergence we need $\|I - \alpha J''(\eta^{(k)})\|_2 < 1$. We use that $\|A\|_2 = \sigma_{\max}(A)$. (cf. [Matrix norms](https://en.wikipedia.org/wiki/Matrix_norm#Special_cases))
-Since the eigenvalues of $\J''$ are bounded by $L$ we need $0 < \alpha < 2/L$ to ensure this.
+Since the eigenvalues of $J''$ are bounded by $L$ we need $0 < \alpha < 2/L$ to ensure this.
 ```
 
 * Determine the value of $\alpha$ for which the iteration converges fastest.
@@ -706,11 +706,15 @@ Since the eigenvalues of $\J''$ are bounded by $L$ we need $0 < \alpha < 2/L$ to
 ```{admonition} Answer
 :class: tip, dropdown
 
-The smaller the bound on the constant $\rho$, the faster the convergence. We have
+The smaller the bound on the constant $\rho$, the faster the convergence. By strict convexity, for eigenvalues $\mu \leq \lambda \leq L$ of $J''(u)$ we have
 
-$$\|I - \alpha J''(\eta^{(k)})\|_2 = \ \max (|1 - \alpha \mu|, |1 - \alpha L|).$$
+$$ 1-\alpha L \leq 1-\alpha \lambda \leq 1-\alpha \mu \implies |1-\alpha \lambda| \leq \max (|1 - \alpha \mu|, |1 - \alpha L|).$$
 
-We obtain the smalles possible value by making both terms equal, for which we need
+As a consequence, we get:
+
+$$\|I - \alpha J''(\eta^{(k)})\|_2 = \max_{\lambda} |1-\alpha \lambda| \leq \max (|1 - \alpha \mu|, |1 - \alpha L|).$$
+
+We obtain the smallest possible value by making both terms equal. To see this, draw $|1-\alpha \mu|$ and $|1-\alpha L|$ for $\alpha \geq 0$ and $\mu \leq L$. Subsequently, draw $\max (|1 - \alpha \mu|, |1 - \alpha L|)$ and check where this is maximal. For making both terms equal, we need
 
 $$(1 - \alpha \mu) = -(1 - \alpha L),$$
 
@@ -727,7 +731,7 @@ $$J(u_k) - J(u_*) \leq \frac{\|u_0 - u_*\|}{2Lk}.$$
 
 The key is to use that
 
-$$J(v) \leq J(u) + \langle J'(u), v - u\rangle + \textstyle{\frac{1}{2}}\|u - v\|_2^2.$$
+$$J(v) \leq J(u) + \langle J'(u), v - u\rangle + \textstyle{\frac{L}{2}}\|u - v\|_2^2.$$
 
 ```{admonition} Answer
 :class: tip, dropdown
