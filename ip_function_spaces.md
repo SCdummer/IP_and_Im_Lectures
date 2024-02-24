@@ -517,7 +517,7 @@ $$
 K^\dagger K u - u + \delta K^{\dagger}\sin(\delta^{-1}\cdot).
 $$
 
-Because $\delta^{-1} = \sigma_k$ and $\sin(\sigma_k^{-1}x)$ is a singular vector of $K$ (or because the pseudo-inverse acts as taking a derivative), this simplifies to
+Because $\delta^{-1} = \sigma_k^{-1}$ and $\sin(\sigma_k^{-1}x)$ is a singular vector of $K$ (or because the pseudo-inverse acts as taking a derivative), the last term simplifies to
 
 $$
 \cos(\sigma_k^{-1}x).
